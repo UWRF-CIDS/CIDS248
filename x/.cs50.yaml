@@ -1,0 +1,14 @@
+check50:
+  checks:
+    hello:
+      - run: bash hello.sh
+        stdout: Hello, world!
+        exit: 0
+    hello name:
+      - run: bash hello.sh name
+        stdout: Hello, name!
+        exit: 0
+
+submit50:
+    files:
+    - !include "hello.sh"
