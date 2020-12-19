@@ -11,3 +11,4 @@ def contains():
     """commands look good"""
     check50.run("grep -w 'ls' typescript").stdout("1")
     check50.run("grep -w 'cd' typescript").stdout("1")
+    print("okay")
