@@ -1,4 +1,6 @@
 check50:
+  files:
+      - !include "hello.sh"
   checks:
     hello:
       - run: bash hello.sh
