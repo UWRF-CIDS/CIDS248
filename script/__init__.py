@@ -9,6 +9,6 @@ def exists():
 @check50.check(exists)
 def contains():
     """commands look good"""
-    check50.run("grep -w 'ls' typescript").stdout("1")
-    check50.run("grep -w 'cd' typescript").stdout("1")
-    print("okay")
+    check50.run("grep -c -w 'ls' typescript").stdout("1")
+    check50.run("grep -c -w 'cd' typescript").stdout("1")
+    
