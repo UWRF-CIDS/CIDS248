@@ -10,3 +10,4 @@ def exists():
 def contains():
     """commands look good"""
     check50.run("grep -w 'ls' typescript").stdout("1").exit()
+    check50.run("grep -w 'cd' typescript").stdout("1").exit()
