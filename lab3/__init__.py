@@ -300,7 +300,7 @@ def contains_manwc():
 
 
 @check50.check(exists)
-def contains_whatis wc():
+def contains_whatiswc():
     """command "whatis wc" is present"""
     output = check50.run("grep -c -w 'whatis wc' typescript").stdout()
     if output == "0\n":
