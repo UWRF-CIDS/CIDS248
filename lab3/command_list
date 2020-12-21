@@ -1,0 +1,31 @@
+cat
+cat > list1
+pear
+banana
+apple
+list2
+orange
+plum
+mango
+grapefruit
+cat >> list1
+cat list1
+cat list1 list2 > biglist
+cat biglist
+sort
+artichoke
+beetroot
+carrot
+sort < biglist
+sort < biglist > slist
+ls -l
+ls -l > tmp.txt
+sort < tmp.txt
+ls -l | sort
+ls -l | wc -l
+ls list*
+ls *list
+ls ?list
+man wc
+whatis wc
+apropos copy
