@@ -21,7 +21,7 @@ def contains_mv():
     if output == "0\n":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
-  
+
 @check50.check(exists)
 def contains_rm():
     """command "rm" is present"""
