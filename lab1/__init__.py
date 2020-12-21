@@ -3,40 +3,44 @@ import check50.c
 
 @check50.check()
 def exists():
-    """typescript exists"""
+    """typescript file exists"""
     check50.exists("typescript")
 
 @check50.check(exists)
 def contains_ls():
-    """ls ✓"""
+    """command ls is present"""
     check50.run("grep -c -w 'ls' typescript").stdout("1")
 
 @check50.check(exists)
 def contains_lsa():
-    """ls -a ✓"""
+    """command ls -a is present"""
     check50.run("grep -c -w 'ls -a' typescript").stdout("1")
   
 @check50.check(exists)
 def contains_mkdir():
-    """mkdir ✓"""
+    """command mkdir is present"""
     check50.run("grep -c -w 'mkdir' typescript").stdout("1")
    
 @check50.check(exists)
 def contains_cd():
-    """cd ✓"""
+    """command cd is present"""
     check50.run("grep -c -w 'cd' typescript").stdout("1")
    
 @check50.check(exists)
 def contains_cdtilde():
-    """cd ~ ✓"""
+    """command cd ~ is present"""
     check50.run("grep -c -w 'cd ~' typescript").stdout("1")
     
 @check50.check(exists)
 def contains_cddotdot():
-    """cd .. ✓"""
-    check50.run("grep -c -w 'cd ..' typescript").stdout("1")   
+    """command cd .. is present"""
+    output = check50.run("grep -c -w 'cd ..' typescript").stdout()   
+    if output == "0":
+        help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
+        raise check50.Failure(help)
+
     
 @check50.check(exists)
 def contains_pwd():
-    """pwd ✓"""
+    """command "pwd" is present"""
     check50.run("grep -c -w 'pwd' typescript").stdout("1")
