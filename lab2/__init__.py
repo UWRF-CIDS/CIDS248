@@ -9,7 +9,7 @@ def exists():
 @check50.check(exists)
 def contains_cp():
     """command "cp" is present"""
-    output = check50.run("grep -c -w 'cp' typescript").stdout()   
+    output = check50.run("grep -c -w 'cp' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
