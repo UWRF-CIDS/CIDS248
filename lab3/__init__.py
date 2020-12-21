@@ -120,7 +120,7 @@ def contains_catoolist1():
 
 
 @check50.check(exists)
-def contains_cat list1():
+def contains_catlist1():
     """command "cat list1" is present"""
     output = check50.run("grep -c -w 'cat list1' typescript").stdout()
     if output == "0\n":
@@ -130,7 +130,7 @@ def contains_cat list1():
 
 
 @check50.check(exists)
-def contains_cat list1 list2 > biglist():
+def contains_catlist1list2obiglist():
     """command "cat list1 list2 > biglist" is present"""
     output = check50.run("grep -c -w 'cat list1 list2 > biglist' typescript").stdout()
     if output == "0\n":
@@ -200,7 +200,7 @@ def contains_sortibiglist():
 
 
 @check50.check(exists)
-def contains_sort < biglist > slist():
+def contains_sortibiglistoslist():
     """command "sort < biglist > slist" is present"""
     output = check50.run("grep -c -w 'sort < biglist > slist' typescript").stdout()
     if output == "0\n":
@@ -250,7 +250,7 @@ def contains_lslpsort():
 
 
 @check50.check(exists)
-def contains_ls -l | wc -l():
+def contains_lslrwcl():
     """command "ls -l | wc -l" is present"""
     output = check50.run("grep -c -w 'ls -l | wc -l' typescript").stdout()
     if output == "0\n":
@@ -260,7 +260,7 @@ def contains_ls -l | wc -l():
 
 
 @check50.check(exists)
-def contains_ls list*():
+def contains_lslists():
     """command "ls list*" is present"""
     output = check50.run("grep -c -w 'ls list*' typescript").stdout()
     if output == "0\n":
