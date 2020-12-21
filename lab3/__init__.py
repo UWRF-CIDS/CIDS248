@@ -20,7 +20,7 @@ def contains_cat():
 
 
 @check50.check(exists)
-def contains_cat > list1():
+def contains_catolist1():
     """command "cat > list1" is present"""
     output = check50.run("grep -c -w 'cat > list1' typescript").stdout()
     if output == "0\n":
@@ -110,7 +110,7 @@ def contains_grapefruit():
 
 
 @check50.check(exists)
-def contains_cat >> list1():
+def contains_catoolist1():
     """command "cat >> list1" is present"""
     output = check50.run("grep -c -w 'cat >> list1' typescript").stdout()
     if output == "0\n":
@@ -140,7 +140,7 @@ def contains_cat list1 list2 > biglist():
 
 
 @check50.check(exists)
-def contains_cat biglist():
+def contains_catbiglist():
     """command "cat biglist" is present"""
     output = check50.run("grep -c -w 'cat biglist' typescript").stdout()
     if output == "0\n":
@@ -190,7 +190,7 @@ def contains_carrot():
 
 
 @check50.check(exists)
-def contains_sort < biglist():
+def contains_sortibiglist():
     """command "sort < biglist" is present"""
     output = check50.run("grep -c -w 'sort < biglist' typescript").stdout()
     if output == "0\n":
@@ -210,7 +210,7 @@ def contains_sort < biglist > slist():
 
 
 @check50.check(exists)
-def contains_ls -l():
+def contains_lsl():
     """command "ls -l" is present"""
     output = check50.run("grep -c -w 'ls -l' typescript").stdout()
     if output == "0\n":
@@ -220,7 +220,7 @@ def contains_ls -l():
 
 
 @check50.check(exists)
-def contains_ls -l > tmp.txt():
+def contains_lslotmptxt():
     """command "ls -l > tmp.txt" is present"""
     output = check50.run("grep -c -w 'ls -l > tmp.txt' typescript").stdout()
     if output == "0\n":
@@ -230,7 +230,7 @@ def contains_ls -l > tmp.txt():
 
 
 @check50.check(exists)
-def contains_sort < tmp.txt():
+def contains_sortitmptxt():
     """command "sort < tmp.txt" is present"""
     output = check50.run("grep -c -w 'sort < tmp.txt' typescript").stdout()
     if output == "0\n":
@@ -240,7 +240,7 @@ def contains_sort < tmp.txt():
 
 
 @check50.check(exists)
-def contains_ls -l | sort():
+def contains_lslpsort():
     """command "ls -l | sort" is present"""
     output = check50.run("grep -c -w 'ls -l | sort' typescript").stdout()
     if output == "0\n":
@@ -270,7 +270,7 @@ def contains_ls list*():
 
 
 @check50.check(exists)
-def contains_ls *list():
+def contains_lsslist():
     """command "ls *list" is present"""
     output = check50.run("grep -c -w 'ls *list' typescript").stdout()
     if output == "0\n":
@@ -280,7 +280,7 @@ def contains_ls *list():
 
 
 @check50.check(exists)
-def contains_ls ?list():
+def contains_lsqlist():
     """command "ls ?list" is present"""
     output = check50.run("grep -c -w 'ls ?list' typescript").stdout()
     if output == "0\n":
@@ -290,7 +290,7 @@ def contains_ls ?list():
 
 
 @check50.check(exists)
-def contains_man wc():
+def contains_manwc():
     """command "man wc" is present"""
     output = check50.run("grep -c -w 'man wc' typescript").stdout()
     if output == "0\n":
@@ -310,7 +310,7 @@ def contains_whatis wc():
 
 
 @check50.check(exists)
-def contains_apropos copy():
+def contains_aproposcopy():
     """command "apropos copy" is present"""
     output = check50.run("grep -c -w 'apropos copy' typescript").stdout()
     if output == "0\n":
