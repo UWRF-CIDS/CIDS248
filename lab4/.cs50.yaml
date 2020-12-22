@@ -3,6 +3,7 @@ check50:
     - !exclude "*"
     - !require "redir.c"
     - !require "input.txt"
+    - !require "tmp.txt"
 
 submit50:
   files: *check50_files
