@@ -18,8 +18,8 @@ def compiles():
 def correctIO():
     """Reads input.txt and outputs first line to tmp.txt"""
     check50.run("./redir")
-    with open("input.txt", "w") as f1:
-        with open("tmp.txt", "w") as f2:
+    with open("input.txt", "r") as f1:
+        with open("tmp.txt", "r") as f2:
             if f1.readline() != f2.readline():
                 help = "no bueno"
                 raise check50.Failure(help)
