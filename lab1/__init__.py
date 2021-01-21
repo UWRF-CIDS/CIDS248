@@ -10,7 +10,7 @@ def exists():
 def contains_ls():
     """command "ls" is present"""
     output = check50.run("grep -c -w 'ls' typescript").stdout()
-    raise check50.Failure("DB " + (output == "0"))
+    raise check50.Failure("DB " + str(output == "0"))
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
