@@ -9,7 +9,7 @@ def exists():
 @check50.check(exists)
 def contains_ls():
     """command "ls" is present"""
-    output = check50.run("grep -c -w 'ls' typescript | tr -d '\n'").stdout()
+    output = check50.run("grep -c -w 'ls' typescript | tr -d '\\n'").stdout()
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
@@ -17,7 +17,7 @@ def contains_ls():
 @check50.check(exists)
 def contains_lsa():
     """command "ls -a" is present"""
-    output = check50.run("grep -c -w 'ls -a' typescript | tr -d '\n'"").stdout()   
+    output = check50.run("grep -c -w 'ls -a' typescript | tr -d '\\n'"").stdout()   
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
@@ -25,7 +25,7 @@ def contains_lsa():
 @check50.check(exists)
 def contains_mkdir():
     """command "mkdir" is present"""
-    output = check50.run("grep -c -w 'mkdir' typescript | tr -d '\n'"").stdout()   
+    output = check50.run("grep -c -w 'mkdir' typescript | tr -d '\\n'"").stdout()   
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
@@ -33,7 +33,7 @@ def contains_mkdir():
 @check50.check(exists)
 def contains_cd():
     """command "cd" is present"""
-    output = check50.run("grep -c -w 'cd' typescript | tr -d '\n'"").stdout()   
+    output = check50.run("grep -c -w 'cd' typescript | tr -d '\\n'"").stdout()   
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
@@ -41,7 +41,7 @@ def contains_cd():
 @check50.check(exists)
 def contains_cdtilde():
     """command "cd ~" is present"""
-    output = check50.run("grep -c -w 'cd ~' typescript | tr -d '\n'"").stdout()   
+    output = check50.run("grep -c -w 'cd ~' typescript | tr -d '\\n'"").stdout()   
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
@@ -49,7 +49,7 @@ def contains_cdtilde():
 @check50.check(exists)
 def contains_cddotdot():
     """command "cd .." is present"""
-    output = check50.run("grep -c -w 'cd ..' typescript | tr -d '\n'"").stdout()   
+    output = check50.run("grep -c -w 'cd ..' typescript | tr -d '\\n'"").stdout()   
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
@@ -58,7 +58,7 @@ def contains_cddotdot():
 @check50.check(exists)
 def contains_pwd():
     """command "pwd" is present"""
-    output = check50.run("grep -c -w 'pwd' typescript | tr -d '\n'"").stdout()   
+    output = check50.run("grep -c -w 'pwd' typescript | tr -d '\\n'"").stdout()   
     if output == "0":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
