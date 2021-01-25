@@ -29,35 +29,6 @@ def contains_catolist1():
 
 
 
-@check50.check(exists)
-def contains_pear():
-    """command "pear" is present"""
-    output = check50.run("grep -c -w 'pear' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_banana():
-    """command "banana" is present"""
-    output = check50.run("grep -c -w 'banana' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_apple():
-    """command "apple" is present"""
-    output = check50.run("grep -c -w 'apple' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
 
 @check50.check(exists)
 def contains_list2():
@@ -68,44 +39,6 @@ def contains_list2():
         raise check50.Failure(help)
 
 
-
-@check50.check(exists)
-def contains_orange():
-    """command "orange" is present"""
-    output = check50.run("grep -c -w 'orange' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_plum():
-    """command "plum" is present"""
-    output = check50.run("grep -c -w 'plum' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_mango():
-    """command "mango" is present"""
-    output = check50.run("grep -c -w 'mango' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_grapefruit():
-    """command "grapefruit" is present"""
-    output = check50.run("grep -c -w 'grapefruit' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
 
 
 
@@ -157,35 +90,6 @@ def contains_sort():
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
-
-
-@check50.check(exists)
-def contains_artichoke():
-    """command "artichoke" is present"""
-    output = check50.run("grep -c -w 'artichoke' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_beetroot():
-    """command "beetroot" is present"""
-    output = check50.run("grep -c -w 'beetroot' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_carrot():
-    """command "carrot" is present"""
-    output = check50.run("grep -c -w 'carrot' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
 
 
 
@@ -286,35 +190,4 @@ def contains_lsqlist():
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_manwc():
-    """command "man wc" is present"""
-    output = check50.run("grep -c -w 'man wc' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_whatiswc():
-    """command "whatis wc" is present"""
-    output = check50.run("grep -c -w 'whatis wc' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-
-@check50.check(exists)
-def contains_aproposcopy():
-    """command "apropos copy" is present"""
-    output = check50.run("grep -c -w 'apropos copy' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
 
