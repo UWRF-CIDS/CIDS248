@@ -89,3 +89,21 @@ def contains_wc():
     if output == "0\n":
         help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
+        
+
+@check50.check(exists)
+def contains_man():
+    """command "man" is present"""
+    output = check50.run("grep -c -w 'man' typescript").stdout()   
+    if output == "0\n":
+        help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
+        raise check50.Failure(help)
+        
+        
+@check50.check(exists)
+def contains_whatis():
+    """command "whatis" is present"""
+    output = check50.run("grep -c -w 'whatis' typescript").stdout()   
+    if output == "0\n":
+        help = "Make sure that you have tried all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
+        raise check50.Failure(help)
