@@ -1,13 +1,14 @@
-ls -l
-chmod go-rwx
-chmod a+rw
-ps
-sleep 10
-sleep 10 &
-sleep 100
-bg
-jobs
-fg
-kill
-kill -l
-kill -9
+cat /etc/passwd
+cat /etc/passwd | head -n 1
+cat /etc/passwd | head -n 1 | cut -d ':' -f1
+echo "User name: $(cat /etc/passwd | head -n 1 | cut -d ':' -f1)."
+cut
+cat jokes.txt | tr -c [:alnum:]\n\ ' ' | tr -s ' ' | tr ' ' '\n'
+cat jokes.txt | awk '{ print length }'
+cat jokes.txt | tr -c [:alnum:]\n\ ' ' | tr -s ' ' | tr ' ' '\n' | awk '{ print length }'
+sort -n | uniq -c
+tr -s ' ' | cut -d' ' -f2,3 | tr ' ' ','
+cat jokes.txt | tr -c [:alnum:]\n\ ' ' | tr -s ' ' | tr ' ' '\n' | awk '{ print length }' | sort -n | uniq -c | tr -s ' ' | cut -d' ' -f2,3 | tr ' ' ',' > data.csv
+wget https://github.com/uwrf-csis/csis248/raw/main/lab4/books.zip
+unzip books.zip
+

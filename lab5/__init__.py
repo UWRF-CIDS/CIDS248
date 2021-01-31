@@ -10,118 +10,87 @@ def exists():
 
 
 @check50.check(exists)
-def contains_lsqlist():
-    """command "ls -l" is present"""
-    output = check50.run("grep -c -w 'ls -l' typescript").stdout()
+def contains_cat1():
+    """command "cat /etc/passwd" is present"""
+    output = check50.run("grep -c -w 'cat /etc/passwd' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
 
+
+
+#cat /etc/passwd | head -n 1
 @check50.check(exists)
-def contains_lsqlist():
-    """command "chmod go-rwx" is present"""
-    output = check50.run("grep -c -w 'chmod go-rwx' typescript").stdout()
+def contains_cat2():
+    """command "cat /etc/passwd | head -n 1" is present"""
+    output = check50.run("grep -c -w 'cat /etc/passwd | head -n 1' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
+        
 
-
+#cut
 @check50.check(exists)
-def contains_lsqlist():
-    """command "chmod a+rw" is present"""
-    output = check50.run("grep -c -w 'chmod a+rw' typescript").stdout()
+def contains_cut():
+    """command "cut" is present"""
+    output = check50.run("grep -c -w 'cut' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
-
+#tr
 @check50.check(exists)
-def contains_lsqlist():
-    """command "ps" is present"""
-    output = check50.run("grep -c -w 'ps' typescript").stdout()
+def contains_tr():
+    """command "tr" is present"""
+    output = check50.run("grep -c -w 'tr' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
 
+#awk '{ print length }'
 @check50.check(exists)
-def contains_lsqlist():
-    """command "sleep 10" is present"""
-    output = check50.run("grep -c -w 'sleep 10' typescript").stdout()
+def contains_awk():
+    """command "awk" is present"""
+    output = check50.run("grep -c -w 'awk' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
-
+#sort -n | uniq -c
 @check50.check(exists)
-def contains_lsqlist():
-    """command "sleep 10 ????" is present"""
-    output = check50.run("grep -c -w 'sleep 10 ????' typescript").stdout()
+def contains_su():
+    """command "sort -n | uniq -c" is present"""
+    output = check50.run("grep -c -w 'sort -n | uniq -c' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
-
+#> data.csv
 @check50.check(exists)
-def contains_lsqlist():
-    """command "sleep 100" is present"""
-    output = check50.run("grep -c -w 'sleep 100' typescript").stdout()
+def contains_redir():
+    """command "> data.csv" is present"""
+    output = check50.run("grep -c -w '> data.csv' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
-
+#wget
 @check50.check(exists)
-def contains_lsqlist():
-    """command "bg" is present"""
-    output = check50.run("grep -c -w 'bg' typescript").stdout()
+def contains_wget():
+    """command "wget" is present"""
+    output = check50.run("grep -c -w 'wget' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
 
 
+#unzip
 @check50.check(exists)
-def contains_lsqlist():
-    """command "jobs" is present"""
-    output = check50.run("grep -c -w 'jobs' typescript").stdout()
+def contains_unzip():
+    """command "unzip" is present"""
+    output = check50.run("grep -c -w 'unzip' typescript").stdout()
     if output == "0\n":
         help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
         raise check50.Failure(help)
-
-
-@check50.check(exists)
-def contains_lsqlist():
-    """command "fg" is present"""
-    output = check50.run("grep -c -w 'fg' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-@check50.check(exists)
-def contains_lsqlist():
-    """command "kill" is present"""
-    output = check50.run("grep -c -w 'kill' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-@check50.check(exists)
-def contains_lsqlist():
-    """command "kill -l" is present"""
-    output = check50.run("grep -c -w 'kill -l' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-
-
-@check50.check(exists)
-def contains_lsqlist():
-    """command "kill -9" is present"""
-    output = check50.run("grep -c -w 'kill -9' typescript").stdout()
-    if output == "0\n":
-        help = "Make sure that you try all commands in the lab. To start the script command so that it appends to you typescript file, use 'script -a typescript'"
-        raise check50.Failure(help)
-

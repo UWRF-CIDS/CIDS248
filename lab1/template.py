@@ -1,6 +1,6 @@
 
 @check50.check(exists)
-def contains_????ist():
+def contains_lsqlist():
     """command "????" is present"""
     output = check50.run("grep -c -w '????' typescript").stdout()
     if output == "0\n":
