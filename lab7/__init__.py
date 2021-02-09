@@ -205,8 +205,8 @@ def check_stars():
 @check50.check(menuExists)
 def check_menu():
     """Checking menu.sh output using each input."""
-    output = check50.run('./menu.sh < testinput > menu.out').stdout()
-    check50.run('./menu.sh.x < testinput > menux.out').stdout()
+    output = check50.run('./menu.sh < testinput').stdout()
+    correct = check50.run('./menu.sh.x < testinput').stdout()
     
-    if check50.hash("menu.out") != check50.hash("menux.out"): 
+    if output.strip() != correct.strip(): 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
