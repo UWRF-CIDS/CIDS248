@@ -63,47 +63,6 @@ STARS_HASHES = [
     "8a59e3d4107c7bdb0983e15a2102abd76995f1f54e579009b518b62056a913b5",
     ]
 
-MENU_OUTPUT = """******Command Menu******
-Select a command:
-1) ls
-2) ls -l
-3) pwd
-4) exit
-Choice: hashstars.py  menu.out  menuinput.txt  outfile.csv  stars.sh
-inputs        menu.sh   menuoutput     sample.txt   trap.sh
-******Command Menu******
-Select a command:
-1) ls
-2) ls -l
-3) pwd
-4) exit
-Choice: total 40
--rw------- 1 ubuntu ubuntu 117 Feb  9 05:28 hashstars.py
--rw------- 1 ubuntu ubuntu   8 Feb  9 05:42 inputs
--rw------- 1 ubuntu ubuntu 999 Feb  9 06:17 menu.out
--rwx------ 1 ubuntu ubuntu 464 Feb  9 05:40 menu.sh
--rw------- 1 ubuntu ubuntu   8 Feb  9 06:12 menuinput.txt
--rw------- 1 ubuntu ubuntu 692 Feb  9 05:44 menuoutput
--rw------- 1 ubuntu ubuntu  24 Feb  9 04:57 outfile.csv
--rw------- 1 ubuntu ubuntu  74 Feb  9 04:57 sample.txt
--rwx------ 1 ubuntu ubuntu 124 Feb  9 05:22 stars.sh
--rwx------ 1 ubuntu ubuntu 107 Feb  5 17:52 trap.sh
-******Command Menu******
-Select a command:
-1) ls
-2) ls -l
-3) pwd
-4) exit
-Choice: /home/ubuntu/248/lab7
-******Command Menu******
-Select a command:
-1) ls
-2) ls -l
-3) pwd
-4) exit
-Choice: """
-
-
 @check50.check()
 def analyzeExists():
     """Checking if analyze.sh file exists"""
@@ -134,7 +93,7 @@ def menuExists():
 @check50.check(analyzeExists)
 def check_analyze():
     """Checking analyze.sh"""
-    output = check50.run("./analyze.sh sample.txt outfile.csv").stdout().exit(0, timeout=10)
+    output = check50.run("./analyze.sh sample.txt outfile.csv").stdout()
     if check50.hash("outfile.csv") != ANALYZE_HASHES[0]:
         raise check50.Failure("Tried running ./analyze.sh sample.txt outfile.csv. outfile.csv did not contain the correct data.")
     
@@ -166,7 +125,7 @@ def check_calc3():
 def check_calc4():
     """Checking calc.sh exit code."""
     code = check50.run("./calc.sh 10 a + 2>&1").exit(2, timeout=10)
-    if code != 3:
+    if code != 2:
         raise check50.Failure("Tried running ./calc.sh 10 a +. The exit code was not 2.")
 
 @check50.check(calcExists)
@@ -181,7 +140,7 @@ def check_calc5():
 def check_calc6():
     """Checking calc.sh exit code."""
     code = check50.run("./calc.sh 1 2 2>&1").exit(1, timeout=10)
-    if code != 3:
+    if code != 1:
         raise check50.Failure("Tried running ./calc.sh 1 2. The exit code was not 1.")
 
 @check50.check(calcExists)
