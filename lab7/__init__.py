@@ -63,9 +63,45 @@ STARS_HASHES = [
     "8a59e3d4107c7bdb0983e15a2102abd76995f1f54e579009b518b62056a913b5",
     ]
 
-MENU_HASHES = [
-    "b29ad9f5b7e30bc5d96c07df4a161967b82e1a168dc89291b295227686ff69df",
-    ]
+MENU_OUTPUT = """******Command Menu******
+Select a command:
+1) ls
+2) ls -l
+3) pwd
+4) exit
+Choice: hashstars.py  menu.out  menuinput.txt  outfile.csv  stars.sh
+inputs        menu.sh   menuoutput     sample.txt   trap.sh
+******Command Menu******
+Select a command:
+1) ls
+2) ls -l
+3) pwd
+4) exit
+Choice: total 40
+-rw------- 1 ubuntu ubuntu 117 Feb  9 05:28 hashstars.py
+-rw------- 1 ubuntu ubuntu   8 Feb  9 05:42 inputs
+-rw------- 1 ubuntu ubuntu 999 Feb  9 06:17 menu.out
+-rwx------ 1 ubuntu ubuntu 464 Feb  9 05:40 menu.sh
+-rw------- 1 ubuntu ubuntu   8 Feb  9 06:12 menuinput.txt
+-rw------- 1 ubuntu ubuntu 692 Feb  9 05:44 menuoutput
+-rw------- 1 ubuntu ubuntu  24 Feb  9 04:57 outfile.csv
+-rw------- 1 ubuntu ubuntu  74 Feb  9 04:57 sample.txt
+-rwx------ 1 ubuntu ubuntu 124 Feb  9 05:22 stars.sh
+-rwx------ 1 ubuntu ubuntu 107 Feb  5 17:52 trap.sh
+******Command Menu******
+Select a command:
+1) ls
+2) ls -l
+3) pwd
+4) exit
+Choice: /home/ubuntu/248/lab7
+******Command Menu******
+Select a command:
+1) ls
+2) ls -l
+3) pwd
+4) exit
+Choice: """
 
 
 @check50.check()
@@ -169,7 +205,7 @@ def check_stars():
 @check50.check(menuExists)
 def check_menu():
     """Checking menu.sh output using each input."""
-    output = check50.run('./menu.sh < testinput > menu.out').stdout()
+    output = check50.run('./menu.sh < testinput').stdout()
     
-    if check50.hash("menu.out") != MENU_HASHES[0]: 
+    if output.strip() != MENU_OUTPUT.strip(): 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
