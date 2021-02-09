@@ -73,6 +73,7 @@ def analyzeExists():
     """Checking if analyze.sh file exists"""
     check50.exists("analyze.sh")
     check50.include("sample.txt")
+    check50.include("testinput")
     
 @check50.check()
 def calcExists():
@@ -167,7 +168,7 @@ def check_stars():
 @check50.check(menuExists)
 def check_menu():
     """Checking menu.sh output using each input."""
-    output = check50.run('echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh  > menu.out').stdout()
+    output = check50.run('./menu.sh < testinput > menu.out').stdout()
     
     if check50.hash("menu.out") != MENU_HASHES[0]: 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
