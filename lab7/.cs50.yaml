@@ -1,0 +1,10 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !require analyze.sh
+    - !require calc.sh
+    - !require stars.sh
+    - !require menu.sh
+
+submit50:
+  files: *check50_files
