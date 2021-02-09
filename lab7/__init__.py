@@ -77,11 +77,17 @@ def analyzeExists():
 def calcExists():
     """Checking if calc.sh file exists"""
     check50.exists("calc.sh")
+    output = check50.run("xxd -p -l 1 calc.sh").stdout()
+    if output != "23\n":
+        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
     
 @check50.check()
 def starsExists():
     """Checking if stars.sh file exists"""
     check50.exists("stars.sh")
+    output = check50.run("xxd -p -l 1 stars.sh").stdout()
+    if output != "23\n":
+        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
 
 
 @check50.check()
@@ -89,6 +95,9 @@ def menuExists():
     """Checking if menu.sh file exists"""
     check50.exists("menu.sh")
     check50.include("menu.sh.x")
+    output = check50.run("xxd -p -l 1 menu.sh").stdout()
+    if output != "23\n":
+        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
 
 
 
