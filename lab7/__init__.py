@@ -64,7 +64,7 @@ STARS_HASHES = [
     ]
 
 MENU_HASHES = [
-    "b841866d76029992423fbb07a82daefc2bffc14f85022bc9cef1c137c58feead",
+    "b29ad9f5b7e30bc5d96c07df4a161967b82e1a168dc89291b295227686ff69df",
     ]
 
 
