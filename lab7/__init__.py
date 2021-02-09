@@ -158,16 +158,16 @@ def check_calc7():
 def check_stars():
     """Checking stars.sh output using random input."""
     num = random.randint(5,55)
-    output = check50.run("bash stars.sh " + str(num)).stdout()
+    output = check50.run("./stars.sh " + str(num) + " > stars.out").stdout()
     
-    if check50.hash(output) != STARS_HASHES[num - 5]: #index for STARS_HASHES start at 0
+    if check50.hash("stars.out") != STARS_HASHES[num - 5]: #index for STARS_HASHES start at 0
         raise check50.Failure("Tried running ./stars.sh " + str(num) + ". The output is not correct.")
         
         
 @check50.check(menuExists)
 def check_menu():
     """Checking menu.sh output using each input."""
-    output = check50.run('echo -e "1\\n2\\n3\\n4\\n" | bash menu.sh ').stdout()
+    output = check50.run('echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh  > menu.out"').stdout()
     
-    if check50.hash(output) != MENU_HASHES[0]: 
+    if check50.hash("menu.out") != MENU_HASHES[0]: 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
