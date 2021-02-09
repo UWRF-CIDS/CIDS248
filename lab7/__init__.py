@@ -109,8 +109,8 @@ def check_calc1():
 @check50.check(calcExists)
 def check_calc2():
     """Checking calc.sh exit code."""
-    code = check50.run("./calc.sh 10 5 a 2>&1").exit(3, timeout=10)
-    if code != 3:
+    code = check50.run("./calc.sh 10 5 a &>/dev/null; echo $?").stdout()
+    if code != "3\n":
         raise check50.Failure("Tried running ./calc.sh 10 5 a. The exit code was not 3.")
 
 @check50.check(calcExists)
@@ -124,8 +124,8 @@ def check_calc3():
 @check50.check(calcExists)
 def check_calc4():
     """Checking calc.sh exit code."""
-    code = check50.run("./calc.sh 10 a + 2>&1").exit(2, timeout=10)
-    if code != 2:
+    code = check50.run("./calc.sh 10 a + &>/dev/null; echo $?").stdout()
+    if code != "2\n":
         raise check50.Failure("Tried running ./calc.sh 10 a +. The exit code was not 2.")
 
 @check50.check(calcExists)
@@ -139,8 +139,8 @@ def check_calc5():
 @check50.check(calcExists)
 def check_calc6():
     """Checking calc.sh exit code."""
-    code = check50.run("./calc.sh 1 2 2>&1").exit(1, timeout=10)
-    if code != 1:
+    code = check50.run("./calc.sh 1 2 &>/dev/null; echo $?").stdout()
+    if code != "1\n":
         raise check50.Failure("Tried running ./calc.sh 1 2. The exit code was not 1.")
 
 @check50.check(calcExists)
