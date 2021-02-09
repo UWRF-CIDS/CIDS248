@@ -126,7 +126,7 @@ def starsExists():
 def menuExists():
     """Checking if menu.sh file exists"""
     check50.exists("menu.sh")
-    check50.include("menuinput.txt")
+    check50.include("menu.sh.x")
 
 
 
@@ -205,7 +205,8 @@ def check_stars():
 @check50.check(menuExists)
 def check_menu():
     """Checking menu.sh output using each input."""
-    output = check50.run('./menu.sh < testinput').stdout()
+    output = check50.run('./menu.sh < testinput > menu.out').stdout()
+    check50.run('./menu.sh.x < testinput > menux.out').stdout()
     
-    if output.strip() != MENU_OUTPUT.strip(): 
+    if check50.hash("menu.out") != check50.hash("menux.out"): 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
