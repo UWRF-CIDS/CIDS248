@@ -90,6 +90,7 @@ def starsExists():
 def menuExists():
     """Checking if menu.sh file exists"""
     check50.exists("menu.sh")
+    check50.include("testinput")
 
 
 
