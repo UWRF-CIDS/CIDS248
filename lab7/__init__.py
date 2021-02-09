@@ -73,7 +73,7 @@ def analyzeExists():
     """Checking if analyze.sh file exists"""
     check50.exists("analyze.sh")
     check50.include("sample.txt")
-    check50.include("testinput")
+
     
 @check50.check()
 def calcExists():
@@ -90,7 +90,7 @@ def starsExists():
 def menuExists():
     """Checking if menu.sh file exists"""
     check50.exists("menu.sh")
-    check50.include("testinput")
+    check50.include("menuinput.txt")
 
 
 
