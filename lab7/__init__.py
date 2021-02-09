@@ -68,6 +68,9 @@ def analyzeExists():
     """Checking if analyze.sh file exists"""
     check50.exists("analyze.sh")
     check50.include("sample.txt")
+    output = check50.run("xxd -p -l 1 analyze.sh").stdout()
+    if output != "23\n":
+        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
 
     
 @check50.check()
