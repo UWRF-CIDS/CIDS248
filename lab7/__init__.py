@@ -65,39 +65,39 @@ STARS_HASHES = [
 
 @check50.check()
 def analyzeExists():
-    """Checking if analyze.sh file exists"""
+    """Checking if analyze.sh file exists and contains the sha-bang line"""
     check50.exists("analyze.sh")
     check50.include("sample.txt")
     output = check50.run("xxd -p -l 1 analyze.sh").stdout()
     if output != "23\n":
-        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
+        raise check50.Failure("It looks your script does not contain the sha-bang line or the sha-bang line contains a typo.")
 
     
 @check50.check()
 def calcExists():
-    """Checking if calc.sh file exists"""
+    """Checking if calc.sh file exists and contains the sha-bang line"""
     check50.exists("calc.sh")
     output = check50.run("xxd -p -l 1 calc.sh").stdout()
     if output != "23\n":
-        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
+        raise check50.Failure("It looks your script does not contain the sha-bang line or the sha-bang line contains a typo.")
     
 @check50.check()
 def starsExists():
-    """Checking if stars.sh file exists"""
+    """Checking if stars.sh file exists and contains the sha-bang line"""
     check50.exists("stars.sh")
     output = check50.run("xxd -p -l 1 stars.sh").stdout()
     if output != "23\n":
-        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
+        raise check50.Failure("It looks your script does not contain the sha-bang line or the sha-bang line contains a typo.")
 
 
 @check50.check()
 def menuExists():
-    """Checking if menu.sh file exists"""
+    """Checking if menu.sh file exists and contains the sha-bang line"""
     check50.exists("menu.sh")
     check50.include("menu.sh.x")
     output = check50.run("xxd -p -l 1 menu.sh").stdout()
     if output != "23\n":
-        raise check50.Failure("It looks like you tried to submit the solution file. Please make sure you are in the correct directory when you run the checks.")
+        raise check50.Failure("It looks your script does not contain the sha-bang line or the sha-bang line contains a typo.")
 
 
 
