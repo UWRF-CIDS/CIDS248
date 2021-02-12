@@ -5,8 +5,10 @@ import random
 
 
 help_msg = '''Output of {} does not match the solution.
-Expect: {}
-Found: {}'''
+Expected: 
+{}
+Found: 
+{}'''
 
 
 
@@ -69,16 +71,17 @@ def input_compiles():
 @check50.check(table_compiles)
 def check_table():
     """checking output of table.c"""
+    src_file = "table.c"
     output = check50.run("./table").stdout()
     soln = check50.run("./table_soln").stdout()
     if output != soln:
-        raise check50.Failure("Output of table.c does not match the solution.")
+        raise check50.Failure(help_msg.format(src_file, soln, output))
       
 
 @check50.check(strings1_compiles)
 def check_strings1():
-    src_file = "strings1.c"
     """checking output of strings1.c"""
+    src_file = "strings1.c"
     output = check50.run("./strings1").stdout()
     soln = check50.run("./strings1_soln").stdout()
     if output != soln:
@@ -87,24 +90,27 @@ def check_strings1():
 @check50.check(strings2_compiles)
 def check_strings2():
     """checking output of strings2.c"""
+    src_file = "strings2.c"
     output = check50.run("./strings2").stdout()
     soln = check50.run("./strings2_soln").stdout()
     if output != soln:
-        raise check50.Failure("Output of strings2.c does not match the solution.")
+        raise check50.Failure(help_msg.format(src_file, soln, output))
         
 @check50.check(strings3_compiles)
 def check_strings3():
     """checking output of strings3.c"""
+    src_file = "strings3.c"
     output = check50.run("./strings3").stdout()
     soln = check50.run("./strings3_soln").stdout()
     if output != soln:
-        raise check50.Failure("Output of strings3.c does not match the solution.")
+        raise check50.Failure(help_msg.format(src_file, soln, output))
         
 @check50.check(input_compiles)
 def check_input():
     """checking output of input.c"""
+    src_file = "input.c"
     rand = random.uniform(0, 1)*50
     output = check50.run("echo '{}' | ./input".format(rand)).stdout()
     soln = check50.run("echo '{}' | ./input_soln".format(rand)).stdout()
     if output != soln:
-        raise check50.Failure("Output of input.c does not match the solution. Test input used is {}".format(rand))
+        raise check50.Failure(help_msg.format(src_file, soln, output) + " Test input used is {}".format(rand))
