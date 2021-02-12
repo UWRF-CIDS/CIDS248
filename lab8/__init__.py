@@ -70,3 +70,36 @@ def check_table():
     if output != soln:
         raise check50.Failure("Output of table.c does not match the solution.")
       
+
+@check50.check(strings1_compiles)
+def check_strings1():
+    """checking output of strings1.c"""
+    output = check50.run("./strings1").stdout()
+    soln = check50.run("./strings1_soln").stdout()
+    if output != soln:
+        raise check50.Failure("Output of strings1.c does not match the solution.")
+
+@check50.check(strings2_compiles)
+def check_strings2():
+    """checking output of strings2.c"""
+    output = check50.run("./strings2").stdout()
+    soln = check50.run("./strings2_soln").stdout()
+    if output != soln:
+        raise check50.Failure("Output of strings2.c does not match the solution.")
+        
+@check50.check(strings3_compiles)
+def check_strings3():
+    """checking output of strings3.c"""
+    output = check50.run("./strings3").stdout()
+    soln = check50.run("./strings3_soln").stdout()
+    if output != soln:
+        raise check50.Failure("Output of strings3.c does not match the solution.")
+        
+@check50.check(input_compiles)
+def check_input():
+    """checking output of input.c"""
+    rand = random.uniform(0, 1)*50
+    output = check50.run("echo '{}' | ./input".format(rand)).stdout()
+    soln = check50.run("echo '{}' | ./input_soln".format(rand)).stdout()
+    if output != soln:
+        raise check50.Failure("Output of input.c does not match the solution. Test input used is {}".format(rand))
