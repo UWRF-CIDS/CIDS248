@@ -62,7 +62,6 @@ def input_compiles():
     check50.c.compile("input.c", lcs50=False)
     
     
-
 @check50.check(table_compiles)
 def check_table():
     """checking output of table.c"""
