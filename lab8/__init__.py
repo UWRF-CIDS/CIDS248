@@ -5,8 +5,10 @@ import random
 
 
 help_msg = '''Output of {} does not match the solution.
+
 Expected: 
 {}
+
 Found: 
 {}'''
 
