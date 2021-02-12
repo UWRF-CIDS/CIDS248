@@ -12,7 +12,7 @@ def table_exists():
     check50.exists("table.c")
     check50.include("table_soln")
 
-@check50.check(exists)
+@check50.check(table_exists)
 def table_compiles():
     """table.c compiles"""
     check50.c.compile("table.c", lcs50=False)
