@@ -77,7 +77,11 @@ def check_strings1():
     output = check50.run("./strings1").stdout()
     soln = check50.run("./strings1_soln").stdout()
     if output != soln:
-        raise check50.Failure("Output of strings1.c does not match the solution.")
+        raise check50.Failure('''Output of strings1.c does not match the solution.
+Expect: {}
+
+Found: {}
+'''.format(soln, output))
 
 @check50.check(strings2_compiles)
 def check_strings2():
