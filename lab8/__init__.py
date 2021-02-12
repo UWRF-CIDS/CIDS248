@@ -41,6 +41,28 @@ def table_compiles():
     """table.c compiles"""
     check50.c.compile("table.c", lcs50=False)
 
+@check50.check(strings1_exists)
+def strings1_compiles():
+    """strings1.c compiles"""
+    check50.c.compile("strings1.c", lcs50=False)
+
+@check50.check(strings2_exists)
+def strings2_compiles():
+    """strings2.c compiles"""
+    check50.c.compile("strings2.c", lcs50=False)
+    
+@check50.check(strings3_exists)
+def strings3_compiles():
+    """strings3.c compiles"""
+    check50.c.compile("strings3.c", lcs50=False)
+    
+@check50.check(input_exists)
+def input_compiles():
+    """input.c compiles"""
+    check50.c.compile("input.c", lcs50=False)
+    
+    
+
 @check50.check(table_compiles)
 def check_table():
     """checking output of table.c"""
