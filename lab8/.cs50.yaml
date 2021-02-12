@@ -1,0 +1,11 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !include table.c
+    - !include strings1.c
+    - !include strings2.c
+    - !include strings3.c
+    - !include input.c
+
+submit50:
+  files: *check50_files
