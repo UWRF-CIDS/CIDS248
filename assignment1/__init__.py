@@ -32,7 +32,7 @@ def check_shell():
     src_file = "shell.c"
     
     commands = ""
-    for i in range(random.randint(3,5):
+    for i in range(random.randint(3,5)):
         commands = commands + "{}\\n".format(random.randint(0,100))
 
     
