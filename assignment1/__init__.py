@@ -35,7 +35,7 @@ def check_shell():
     for i in range(random.randint(3,5)):
         commands = commands + "{}\\n".format(random.randint(0,100))
 
-    
+    commands = commands + "exit\\n"
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
