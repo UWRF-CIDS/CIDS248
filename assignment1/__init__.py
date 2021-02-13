@@ -40,5 +40,5 @@ def check_shell():
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
     if output != soln:
-        raise check50.Failure(help_msg.format(src_file, soln, output) + " Test input was {}.".format(commands))
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  "))
       
