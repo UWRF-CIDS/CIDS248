@@ -33,7 +33,7 @@ def check_shell():
     
     commands = ""
     for i in range(random.randint(3,5)):
-        commands = commands + "{}\n".format(random.randint(0,100))
+        commands = commands + "cmd{}\n".format(random.randint(0,100))
 
     commands = commands + "exit\n"
     
