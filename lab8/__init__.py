@@ -67,7 +67,7 @@ def strings3_compiles():
 @check50.check(input_exists)
 def input_compiles():
     """input.c compiles"""
-    check50.c.compile("input.c", lcs50=False)
+    check50.c.compile("input.c", cc='gcc', lcs50=False)
     
     
 @check50.check(table_compiles)
