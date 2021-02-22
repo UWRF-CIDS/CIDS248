@@ -1,0 +1,9 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !include myStrlen.c
+    - !include myStrchr.c
+    - !include myAtoi.c
+
+submit50:
+  files: *check50_files
