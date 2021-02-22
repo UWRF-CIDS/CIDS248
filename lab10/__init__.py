@@ -79,8 +79,7 @@ def myAtoi_compiles():
 def check_myAtoi():
     """checking output of myAtoi.c"""
     src_file = "myAtoi.c"
-    sign = random.randint(0, 1) == 0 ? -1 : 1; 
-        input1 = random.randint(1,100000) * sign
+    input1 = random.randint(-10000, 10000)
     output = check50.run("./myAtoi {}".format(input1)).stdout()
     soln = check50.run("./myAtoi_soln {}".format(input1)).stdout()
     if output != soln:
