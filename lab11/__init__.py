@@ -54,13 +54,13 @@ def myStrchr_compiles():
 def check_myStrchr():
     """checking output of myStrchr.c"""
     src_file = "myStrchr.c"
-    input1 = random.randint(1,100000)
-    input2 = random.randint(0,10)
+    input1 = random.randint(100,100000)
+    input2 = random.randint(0,9)
     
-    output = check50.run("./myStrchr {} {}".format(input1, input2)).stdout()
-    soln = check50.run("./myStrchr_soln {} {}".format(input1, input2)).stdout()
+    output = check50.run("./myStrchr {}0123456789 {}".format(input1, input2)).stdout()
+    soln = check50.run("./myStrchr_soln {}0123456789 {}".format(input1, input2)).stdout()
     if output != soln:
-        raise check50.Failure(help_msg.format(src_file, soln, output) + " Test input was {} {}.".format(input1, input2))
+        raise check50.Failure(help_msg.format(src_file, soln, output) + " Test input was {}0123456789 {}.".format(input1, input2))
         
         
         
