@@ -27,8 +27,8 @@ def shell_compiles():
     check50.c.compile("shell.c",cc='gcc', lcs50=False)
       
 @check50.check(shell_compiles)
-def check_shell():
-    """checking output of shell.c"""
+def check_shell1():
+    """checking output of shell.c with invalid input"""
     src_file = "shell.c"
     
     commands = ""
@@ -42,3 +42,28 @@ def check_shell():
     if output != soln:
         raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
       
+@check50.check(shell_compiles)
+def check_shell_exit():
+    """checking output of shell.c with exit command"""
+    src_file = "shell.c"
+    
+    commands = "exit\n";
+    
+    output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
+    soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
+    if output != soln:
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
+        
+
+@check50.check(shell_compiles)
+def check_shell_exit_code():
+    """checking output of shell.c with exit code"""
+    src_file = "shell.c"
+    
+    commands = "exit " + str(random.randint(0,255)) + "\n";
+    
+    output = check50.run("echo '{}' | ./shell > /dev/null; echo $?".format(commands)).stdout()
+    soln = check50.run("echo '{}' | ./shell_soln > /dev/null; echo $?".format(commands)).stdout()
+    if output != soln:
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. Use \"echo $?\" to check that your exit code is correct.".format(commands.replace("\n", "  ")))
+        
