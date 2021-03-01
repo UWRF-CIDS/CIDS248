@@ -67,6 +67,33 @@ def check_shell_exit_code():
     if output != soln:
         raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. After you exit your shell, use \"echo $?\" to check that your exit code is correct.".format(commands.replace("\n", "  ")))
         
+        
+@check50.check(check_shell_exit)
+def check_shell_exit_code_nonnumeric():
+    """checking output of shell.c with exit and non-numeric exit code"""
+    src_file = "shell.c"
+    
+    commands = "exit random" + str(random.randint(2,255)) + "\nexit\n";
+    
+    output = check50.run("echo '{}' | ./shell 1>/dev/null".format(commands)).stdout()
+    soln = check50.run("echo '{}' | ./shell_soln 1>/dev/null".format(commands)).stdout()
+    if output != soln:
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. Make sure errors are printed to stderr and not stdout.".format(commands.replace("\n", "  ")))
+                
+@check50.check(check_shell_exit)
+def check_shell_exit_code_outofrange():
+    """checking output of shell.c with exit and exit code out of range"""
+    src_file = "shell.c"
+    
+    commands = "exit " + str(random.randint(256,500)) + "\nexit\n";
+    
+    output = check50.run("echo '{}' | ./shell 1>/dev/null".format(commands)).stdout()
+    soln = check50.run("echo '{}' | ./shell_soln 1>/dev/null".format(commands)).stdout()
+    if output != soln:
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. Make sure errors are printed to stderr and not stdout.".format(commands.replace("\n", "  ")))
+               
+
+        
 @check50.check(check_shell_exit)
 def check_shell_help():
     """checking output of shell.c with help command"""
@@ -123,7 +150,7 @@ def check_shell_cd_dir_error():
     
     commands = "cd dir" + str(random.randint(0,100)) + "\nexit\n";
     
-    output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
-    soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
+    output = check50.run("echo '{}' | ./shell 1>/dev/null".format(commands)).stdout()
+    soln = check50.run("echo '{}' | ./shell_soln 1>/dev/null".format(commands)).stdout()
     if output != soln:
-        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. Make sure errors are printed to stderr.".format(commands.replace("\n", "  ")))
