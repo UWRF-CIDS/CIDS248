@@ -12,7 +12,7 @@ def stat_example1_exists():
 @check50.check(stat_example1_exists)
 def stat_example1_compiles():
     """stat_example1.c compiles"""
-    check50.c.compile("stat_example1.c",cc='gcc', _BSD_SOURCE=True, lcs50=False)
+    check50.c.compile("stat_example1.c",cc='gcc', D="_BSD_SOURCE", lcs50=False)
 
 @check50.check()
 def stat_example2_exists():
