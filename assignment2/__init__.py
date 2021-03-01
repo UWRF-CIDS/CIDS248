@@ -37,10 +37,10 @@ def check_shell1():
 
     commands = commands + "exit\n"
     
-    output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
-    soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
+    output = check50.run("echo '{}' | ./shell 1>/dev/null".format(commands)).stdout()
+    soln = check50.run("echo '{}' | ./shell_soln 1>/dev/null".format(commands)).stdout()
     if output != soln:
-        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. Make sure to print errors to stderr and not strout.".format(commands.replace("\n", "  ")))
       
 @check50.check(shell_compiles)
 def check_shell_exit():
