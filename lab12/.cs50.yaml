@@ -1,0 +1,11 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !include typedef.c
+    - !include struct1.c
+    - !include struct2.c
+    - !include struct3.c
+    - !include struct4.c
+
+submit50:
+  files: *check50_files

@@ -1,0 +1,9 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !include stat_example1.c
+    - !include stat_example2.c
+    - !include file_io.c
+    
+submit50:
+  files: *check50_files
