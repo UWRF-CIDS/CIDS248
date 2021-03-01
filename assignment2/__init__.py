@@ -121,7 +121,7 @@ def check_shell_cd_dir_error():
     """checking error output of shell.c with cd and a directory that does not exist"""
     src_file = "shell.c"
     
-    commands = "cd dir" + random.randint(0,100)) + "\n";
+    commands = "cd dir" + str(random.randint(0,100)) + "\n";
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
