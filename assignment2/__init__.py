@@ -67,36 +67,36 @@ def check_shell_exit_code():
     if output != soln:
         raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. After you exit your shell, use \"echo $?\" to check that your exit code is correct.".format(commands.replace("\n", "  ")))
         
-@check50.check(shell_compiles)
+@check50.check(check_shell_exit)
 def check_shell_help():
     """checking output of shell.c with help command"""
     src_file = "shell.c"
     
-    commands = "help\n";
+    commands = "help\nexit\n";
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
     if output != soln:
         raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
     
-@check50.check(shell_compiles)
+@check50.check(check_shell_exit)
 def check_shell_pwd():
     """checking output of shell.c with pwd command"""
     src_file = "shell.c"
     
-    commands = "pwd\n";
+    commands = "pwd\nexit\n";
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
     if output != soln:
         raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
         
-@check50.check(shell_compiles)
+@check50.check(check_shell_exit)
 def check_shell_cd():
     """checking output of shell.c with cd command and no directory given"""
     src_file = "shell.c"
     
-    commands = "cd\n";
+    commands = "cd\nexit\n";
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
@@ -108,7 +108,7 @@ def check_shell_cd_dir():
     """checking output of shell.c with 'cd /home'"""
     src_file = "shell.c"
     
-    commands = "cd /home\n";
+    commands = "cd /home\nexit\n";
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
@@ -121,7 +121,7 @@ def check_shell_cd_dir_error():
     """checking error output of shell.c with cd and a directory that does not exist"""
     src_file = "shell.c"
     
-    commands = "cd dir" + str(random.randint(0,100)) + "\n";
+    commands = "cd dir" + str(random.randint(0,100)) + "\nexit\n";
     
     output = check50.run("echo '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo '{}' | ./shell_soln".format(commands)).stdout()
