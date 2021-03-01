@@ -12,7 +12,7 @@ def stat_example1_exists():
 @check50.check(stat_example1_exists)
 def stat_example1_compiles():
     """stat_example1.c compiles"""
-    check50.c.compile("stat_example1.c",cc='gcc', D_GNU_SOURCE=True, lcs50=False)
+    check50.c.compile("stat_example1.c",cc='gcc',  lcs50=False)
 
 @check50.check()
 def stat_example2_exists():
@@ -22,7 +22,7 @@ def stat_example2_exists():
 @check50.check(stat_example2_exists)
 def stat_example2_compiles():
     """stat_example2.c compiles"""
-    check50.c.compile("stat_example2.c",cc='gcc', D_GNU_SOURCE=True, lcs50=False)
+    check50.c.compile("stat_example2.c",cc='gcc', lcs50=False)
 
 @check50.check()
 def file_io_exists():
@@ -32,4 +32,4 @@ def file_io_exists():
 @check50.check(file_io_exists)
 def file_io_compiles():
     """file_io.c compiles"""
-    check50.c.compile("file_io.c",cc='gcc', D_GNU_SOURCE=True, lcs50=False)
+    check50.c.compile("file_io.c",cc='gcc', lcs50=False)
