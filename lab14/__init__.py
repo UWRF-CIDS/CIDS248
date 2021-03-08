@@ -17,8 +17,8 @@ def leaky_compiles():
 @check50.check(leaky_compiles)
 def leaky_check():
     """leaky.c contains no memory leaks"""
-    output = check50.run("./leaky".stdout()
-    raise check50.Failure(output)
+    output = check50.run(valgrind "./leaky").stdout()
+    
     if "All heap blocks were freed -- no leaks are possible" not in str(output):
         raise check50.Failure("According to valgrind, the program still contains leaks.")
 
