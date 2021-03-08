@@ -24,8 +24,8 @@ def compiles():
 @check50.check(compiles)
 def check_queue_example():
     """checking output of queue_example"""
-    output = check50.run("./queue_example".stdout()
-    soln = check50.run("./queue_example_soln".stdout()
+    output = check50.run("./queue_example").stdout()
+    soln = check50.run("./queue_example_soln").stdout()
     if output != soln:
         raise check50.Failure("Your output did not match the solution output. \n\nExpected:\n{}\n\nYour output:\n{}\n\n".format(soln, output))
       
