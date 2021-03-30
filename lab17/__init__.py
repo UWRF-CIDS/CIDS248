@@ -44,7 +44,7 @@ def fork_exec_wait_compiles():
     """fork_exec_wait compiles"""
     check50.c.compile("fork_exec_wait.c",cc='gcc', lcs50=False)
     
-    @check50.check()
+@check50.check()
 def zombie_exists():
     """zombie exist"""
     check50.exists("zombie.c")

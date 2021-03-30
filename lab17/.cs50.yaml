@@ -1,10 +1,13 @@
 check50: 
   files: &check50_files
     - !exclude "*"
-    - !include queue.h
-    - !include queue.c
-    - !include queue_example.c
-    - !include Makefile
+    - !include fork_exec_wait.c  
+    - !include orphan.c
+    - !include simple_exec.c
+    - !include simple_fork.c
+    - !include simple_wait.c
+    - !include zombie.c
+
     
 submit50:
   files: *check50_files
