@@ -197,7 +197,20 @@ def check_shell_echo_abcdefg():
     """checking output of shell.c with command echo a b c d e f g"""
     src_file = "shell.c"
     
-    commands = "echo echo a b c d e f g\nexit\n";
+    commands = "echo a b c d e f g\nexit\n";
+    
+    output = check50.run("echo -n '{}' | ./shell".format(commands)).stdout()
+    soln = check50.run("echo -n '{}' | ./shell_soln".format(commands)).stdout()
+    if output != soln:
+        raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}.".format(commands.replace("\n", "  ")))
+
+
+@check50.check(check_shell_echo_hello)
+def check_shell_abcdefg():
+    """checking output of shell.c with command abcdefg"""
+    src_file = "shell.c"
+    
+    commands = "abcdefg\nexit\n";
     
     output = check50.run("echo -n '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo -n '{}' | ./shell_soln".format(commands)).stdout()
