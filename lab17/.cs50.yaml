@@ -1,0 +1,10 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !include queue.h
+    - !include queue.c
+    - !include queue_example.c
+    - !include Makefile
+    
+submit50:
+  files: *check50_files
