@@ -15,7 +15,7 @@ def io_example_compiles():
     check50.c.compile("io_example.c",cc='gcc', lcs50=False)
 
 @check50.check()
-def simple_wait_exists():
+def dup_example_exists():
     """dup_example exist"""
     check50.exists("dup_example.c")
 
@@ -24,3 +24,7 @@ def dup_example_compiles():
     """dup_example compiles"""
     check50.c.compile("dup_example.c",cc='gcc', lcs50=False)
     
+@check50.check()
+def in_file_exists():
+    """in_file exist"""
+    check50.exists("in_file.txt")
