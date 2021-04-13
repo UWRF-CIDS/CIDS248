@@ -3,6 +3,7 @@ check50:
     - !exclude "*"
     - !include io_example.c  
     - !include dup_example.c
+    - !include in_file.txt
 
     
 submit50:
