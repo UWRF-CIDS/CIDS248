@@ -37,8 +37,8 @@ def check_shell1():
 
     commands = commands + "exit\n"
     
-    output = check50.run("echo -e -n '{}' | ./shell 1>/dev/null".format(commands)).stdout()
-    soln = check50.run("echo -e -n '{}' | ./shell_soln 1>/dev/null".format(commands)).stdout()
+    output = check50.run("echo -n '{}' | ./shell 1>/dev/null".format(commands)).stdout()
+    soln = check50.run("echo -n '{}' | ./shell_soln 1>/dev/null".format(commands)).stdout()
     if output != soln:
         raise check50.Failure(help_msg.format(src_file, soln, output) + "Test input was {}. Make sure to print errors to stderr and not strout.".format(commands.replace("\n", "  ")))
       
