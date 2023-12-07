@@ -224,7 +224,7 @@ def check_shell_pipe1():
     """checking output of shell.c with command echo "this is a test" | wc"""
     src_file = "shell.c"
     
-    commands = "echo \"this is a test\" | wc\nexit\n";
+    commands = "echo this is a test | wc\nexit\n";
     
     output = check50.run("echo -n '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo -n '{}' | ./shell_soln".format(commands)).stdout()
@@ -237,7 +237,7 @@ def check_shell_pipe2():
     """checking output of shell.c with command echo "this is a test" | grep -o t | wc"""
     src_file = "shell.c"
     
-    commands = "echo \"this is a test\" | grep -o t | wc\nexit\n";
+    commands = "echo this is a test | grep -o t | wc\nexit\n";
     
     output = check50.run("echo -n '{}' | ./shell".format(commands)).stdout()
     soln = check50.run("echo -n '{}' | ./shell_soln".format(commands)).stdout()
