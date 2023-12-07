@@ -260,7 +260,7 @@ def check_shell_pipe_built_in():
 def check_shell_pipe3():
     """checking output of shell.c with command ls -l | tail -n 3 | grep -o - | wc -l"""
     src_file = "shell.c"
-    
+     
     commands = "ls -l | tail -n 3 | grep -o - | wc -l\nexit\n";
     
     output = check50.run("echo -n '{}' | ./shell".format(commands)).stdout()
