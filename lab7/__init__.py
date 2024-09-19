@@ -69,7 +69,7 @@ def analyzeExists():
     check50.exists("analyze.sh")
     check50.include("sample.txt")
     output = check50.run("cat analyze.sh | grep \"#\!/bin/bash\"").stdout()
-    if output != "#!/bin/bash":
+    if output != "#!/bin/bash\n":
         raise check50.Failure("It looks your script does not contain the sha-bang line or the sha-bang line contains a typo. Found:", output)
 
     
