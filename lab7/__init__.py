@@ -176,6 +176,7 @@ def check_stars():
 @check50.check(menuExists)
 def check_menu():
     """Checking menu.sh output using each input."""
+    check50.include("menuinput.txt")
     output = check50.run('./menu.sh < menuinput.txt').stdout()
     correct = check50.run('./menu.sh.x < menuinput.txt').stdout()
     
