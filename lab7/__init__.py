@@ -95,6 +95,7 @@ def menuExists():
     """Checking if menu.sh file exists and contains the sha-bang line"""
     check50.exists("menu.sh")
     check50.include("menu.sh.x")
+    check50.include("menu1.sh.x")
     output = check50.run("cat menu.sh | grep \"#\\!/bin/bash\"").stdout()
     if output != "#!/bin/bash\n":
         raise check50.Failure("It looks your script does not contain the sha-bang line or the sha-bang line contains a typo.")
@@ -180,6 +181,6 @@ def check_menu():
     output = check50.run('./menu.sh < menuinput.txt').stdout()
     correct = check50.run('./menu.sh.x < menuinput.txt').stdout()
     correct2 = check50.run('./menu1.sh.x < menuinput.txt').stdout()
-    
+        
     if output.strip() != correct.strip() and output.strip() != correct2.strip(): 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
