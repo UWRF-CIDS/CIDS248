@@ -185,5 +185,5 @@ def check_menu():
     correct = check50.run('./menu.sh.x < menuinput.txt').stdout()
     correct2 = correct.replace("Choice: ", "")
         
-    if output.strip() != correct.strip() and output != correct2.strip(): 
+    if output.strip() != correct2.strip():# and output != correct2.strip(): 
         raise check50.Failure('Tried running echo -e "1\\n2\\n3\\n4\\n" | ./menu.sh. The output is not correct.')
