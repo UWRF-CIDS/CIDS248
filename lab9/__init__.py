@@ -24,7 +24,7 @@ def tictactoe_exists():
 @check50.check(tictactoe_exists)
 def tictactoe_compiles():
     """tictactoe.c compiles"""
-    check50.c.compile("tictactoe.c",cc='gcc', lcs50=False)
+    check50.c.compile("tictactoe.c",cc='gcc', std="c2x", lcs50=False)
       
 @check50.check(tictactoe_compiles)
 def check_tictactoe():
