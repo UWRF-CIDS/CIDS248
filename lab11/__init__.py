@@ -24,7 +24,7 @@ def myStrlen_exists():
 @check50.check(myStrlen_exists)
 def myStrlen_compiles():
     """myStrlen.c compiles"""
-    check50.c.compile("myStrlen.c",cc='gcc', lcs50=False)
+    check50.c.compile("myStrlen.c",cc='gcc', std="c2x", lcs50=False)
       
 @check50.check(myStrlen_compiles)
 def check_myStrlen():
@@ -48,7 +48,7 @@ def myStrchr_exists():
 @check50.check(myStrchr_exists)
 def myStrchr_compiles():
     """myStrchr.c compiles"""
-    check50.c.compile("myStrchr.c",cc='gcc', lcs50=False)
+    check50.c.compile("myStrchr.c",cc='gcc', std="c2x", lcs50=False)
       
 @check50.check(myStrchr_compiles)
 def check_myStrchr():
@@ -73,7 +73,7 @@ def myAtoi_exists():
 @check50.check(myAtoi_exists)
 def myAtoi_compiles():
     """myAtoi.c compiles"""
-    check50.c.compile("myAtoi.c",cc='gcc', lcs50=False)
+    check50.c.compile("myAtoi.c",cc='gcc', std="c2x", lcs50=False)
       
 @check50.check(myAtoi_compiles)
 def check_myAtoi():
