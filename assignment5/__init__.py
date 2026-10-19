@@ -25,7 +25,7 @@ def shell_exists():
 @check50.check(shell_exists)
 def shell_compiles():
     """shell.c compiles"""
-    check50.c.compile("shell.c",cc='gcc', lcs50=False)
+    check50.c.compile("shell.c",cc='gcc', std="c2x", lcs50=False)
 
 
 @check50.check(shell_compiles)
